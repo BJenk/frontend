@@ -33,6 +33,7 @@ function Foods(props) {
   const { loading, error, data } = useQuery(GET_FOOD_NUTRIENTS, {
     variables: { id: router.query.id },
   });
+  console.log(data)
   if (error) return "Error Loading Nutrients";
   if (loading) return <h1>Loading ...</h1>;
   if (data.food) {

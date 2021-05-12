@@ -7,6 +7,7 @@
     "graphql": "15.0.0",
     "next": "^10.2.0",
     "next-apollo": "3.1.10",
+    "postgres": "^1.0.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "reactstrap": "^8.9.0"
@@ -14,6 +15,7 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js -p $PORT",
+    "heroku-postbuild": "next build"
   }
 }
