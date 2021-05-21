@@ -17,5 +17,8 @@
     "build": "next build",
     "start": "NODE_ENV=production node server.js -p $PORT",
     "heroku-postbuild": "next build"
+  },
+  "engines": {
+    "node": "^12.16.1"
   }
 }
