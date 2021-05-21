@@ -15,15 +15,10 @@ import {
 } from "reactstrap";
 
 const GET_FOOD_NUTRIENTS = gql`
-  query($id: ID!) {
-    food(id: $id) {
+  query{
+    foods{
       id
       name
-      nutrients {
-        id
-        name
-        description
-      }
     }
   }
 `;
@@ -34,7 +29,7 @@ function Foods(props) {
     variables: { id: router.query.id },
   });
   console.log(data)
-  if (error) return "Error Loading Nutrients";
+  if (error) return "Error Loading Foods";
   if (loading) return <h1>Loading ...</h1>;
   if (data.food) {
     const foods  = data.food;
@@ -82,6 +77,6 @@ function Foods(props) {
       </>
     );
   }
-  return <h1>Add Nutrients</h1>;
+  return <h1>No Foods</h1>;
 }
 export default Foods;

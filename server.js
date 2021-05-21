@@ -16,6 +16,13 @@ app.prepare()
 			console.dir("req.params.id = " + JSON.stringify(req.params.id))
 			app.render(req, res, actualPage, queryParams)
 		})
+		server.get('/topic/:id', (req, res) => {
+			console.log(req,res)
+			const actualPage = '/topic'
+			const queryParams = { id: req.params.id }
+			console.dir("req.params.id = " + JSON.stringify(req.params.id))
+			app.render(req, res, actualPage, queryParams)
+		})
 
 		server.get('*', (req, res) => {
 			return handle(req, res)
